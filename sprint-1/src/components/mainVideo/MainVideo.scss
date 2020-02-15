@@ -1,0 +1,12 @@
+// @import "../../Styles/_globalStyle.scss";
+@import "../../Styles/Partials/fonts";
+
+* {
+  font-family: Avenir;
+}
+
+.main {
+  &__still {
+    width: 100%;
+  }
+}

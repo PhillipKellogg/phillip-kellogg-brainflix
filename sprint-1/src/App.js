@@ -3,13 +3,14 @@ import React from "react";
 import "./App.css";
 import Header from "./components/header/Header";
 import Recommended from "./components/recommended/Recommended";
-import Video from "./components/video/Video";
+import MainVideo from "./components/mainVideo/MainVideo";
+import Comments from "./components/comments/Comments";
+
 function App() {
   return (
     <div>
       <Header />
-      <Video />
-      <Recommended />
+      <MainVideo />
     </div>
   );
 }
