@@ -5,15 +5,15 @@ import "./Header.scss";
 export default class Header extends React.Component {
   render() {
     return (
-      <header>
+      <header className="header">
         <h2>React App</h2>
-        <nav>
-          <a href="./">Home</a>
-          {" | "}
-          <a href="./">About</a>
-          {" | "}
-          <a href="./">Contact</a>
-        </nav>
+        <div className="header__logo"></div>
+        <div>
+          <form action="">
+            <input type="text" name="search" id="" className="header__search" />
+          </form>
+        </div>
+        <div className="header__upload"></div>
       </header>
     );
   }

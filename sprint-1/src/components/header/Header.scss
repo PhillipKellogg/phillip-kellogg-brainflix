@@ -4,3 +4,22 @@ header {
   width: 100%;
   height: 50%;
 }
+.header {
+  &__logo {
+    width: 200px;
+    height: 100px;
+    background-image: url(../../Assets/Logo/Logo-brainflix.svg);
+    background-repeat: no-repeat;
+  }
+  &__search {
+    width: 200px;
+    border-radius: 5px;
+    height: 32px;
+  }
+  // &__upload {
+  //   width: 200px;
+  //   height: 100px;
+  //   background-image: url(../../Assets/Images/Mohan-muruge.jpg);
+  //   background-repeat: no-repeat;
+  // }
+}
