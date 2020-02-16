@@ -1,3 +1,14 @@
+@import "../../Styles/Partials/fonts";
+@import "../../Styles/Partials/variables";
+@import "../../Styles/Partials/mixins";
+
+label {
+  color: #afafaf;
+  font-weight: 1000;
+}
+.title {
+  margin: 5%;
+}
 .form {
   margin: 0 auto;
 
@@ -5,7 +16,7 @@
   flex-direction: row;
   width: 90%;
   justify-content: center;
-
+  border-bottom: 1px solid $mercury;
   & form {
     width: 80%;
   }
@@ -44,28 +55,87 @@
     // width: 50%;
     // color: $black-1;
     border-radius: 4px;
-    border: silver solid 1px;
+    border: #e1e1e1 solid 2px;
+    height: 75px;
+    border: 2px solid $mercury;
+    background-color: $alabaster;
+    color: $black;
     &::placeholder {
-      color: black;
+      color: $black;
     }
   }
 
   &__name::placeholder {
-    color: black;
+    color: $black;
   }
   &__name::active {
-    border: black solid 1px;
+    border: $black solid 1px;
   }
   &__button {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid silver;
+    border: solid 1px;
+
     border-radius: 4px;
     box-sizing: border-box;
-    background: aquamarine;
-    color: beige;
+    background: $brainflix-aqua;
+    color: $mercury;
     font-weight: bold;
+  }
+}
+
+.comments {
+  margin: 0 auto 5%;
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  flex-direction: column;
+  @media #{$desktop} {
+    width: 500px;
+  }
+  &__block {
+    display: flex;
+    padding-top: 3%;
+    padding-bottom: 3px;
+    min-height: 70px;
+    border-bottom: 1px solid $mercury;
+  }
+
+  &__pic {
+    height: 50px;
+    width: 50px;
+    background-color: #bbb;
+    border-radius: 50%;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    justify-content: space-between;
+    @media #{$desktop} {
+      justify-content: flex-start;
+    }
+  }
+  &__name {
+    margin-left: 40px;
+    font-weight: bold;
+  }
+  &__text {
+    margin-left: 40px;
+    width: 100%;
+  }
+  &__msg {
+    margin-left: 40px;
+  }
+  &__timestamp {
+    color: $silver;
+    padding-left: 10px;
   }
 }

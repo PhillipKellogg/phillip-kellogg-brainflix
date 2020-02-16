@@ -21,15 +21,26 @@ const VideoDisplay = props => {
         <img src={image} alt="" className="main__still" />
       </div>
       <p> duration: {duration},</p>
-      <h2>{title}</h2>
-      <article>
-        <p>
-          By {channel}, {timestamp}
-        </p>
-        <div>{views}</div>
-        <div>{likes}</div>
+      <article className="info">
+        <article className="info__top">
+          <h2 className="info__title">{title}</h2>
+          <span className="info__user">
+            <p className="info__channel">By {channel}</p>
+            <p className="info__timestamp">{timestamp}</p>
+          </span>
+          <article className="info__stats">
+            <div className="info__views">
+              <div className="info__icon--views"></div>
+              <p>{views}</p>
+            </div>
+            <div className="info__likes">
+              <div className="info__icon--likes"></div>
+              <p>{likes}</p>
+            </div>
+          </article>
+        </article>
+        <p className="info__description"> {description}</p>
       </article>
-      <p> {description}</p>
     </div>
   );
 };

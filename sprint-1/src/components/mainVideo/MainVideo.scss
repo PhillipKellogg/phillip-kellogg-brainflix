@@ -1,12 +1,53 @@
 // @import "../../Styles/_globalStyle.scss";
 @import "../../Styles/Partials/fonts";
+@import "../../Styles/Partials/variables";
 
 * {
   font-family: Avenir;
 }
-
+p {
+  color: $black;
+}
 .main {
   &__still {
     width: 100%;
+  }
+}
+.info {
+  width: 90%;
+  margin: auto;
+  &__top {
+    border-bottom: 1px solid $mercury;
+  }
+  &__title {
+    font-size: 2rem;
+    font-family: Avenir_bold;
+    color: $black;
+    margin: 0;
+    margin-top: 20px;
+  }
+  &__user {
+    display: flex;
+    margin-top: 20px;
+  }
+  &__channel {
+    font-weight: 1000;
+  }
+  &__timestamp {
+    margin-left: 20px;
+    color: $silver;
+  }
+  &__stats {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  &__likes {
+    margin-left: 50px;
+  }
+  &__description {
+    margin-top: 20px;
+    line-height: 1.5rem;
+    margin-bottom: 30px;
   }
 }

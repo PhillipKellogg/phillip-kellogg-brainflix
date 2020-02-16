@@ -6,14 +6,20 @@ export default class Header extends React.Component {
   render() {
     return (
       <header className="header">
-        <h2>React App</h2>
         <div className="header__logo"></div>
         <div>
-          <form action="">
-            <input type="text" name="search" id="" className="header__search" />
-          </form>
+          <input
+            placeholder="Search"
+            type="text"
+            name="search"
+            id=""
+            className="header__search"
+          />
+          <div className="header__actions">
+            <button className="header__upload">UPLOAD</button>
+            <div className="header__user"></div>
+          </div>
         </div>
-        <div className="header__upload"></div>
       </header>
     );
   }

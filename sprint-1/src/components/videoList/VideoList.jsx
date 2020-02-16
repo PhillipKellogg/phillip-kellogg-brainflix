@@ -2,7 +2,7 @@ import React from "react";
 import "./VideoList.scss";
 
 import Video0 from "../../Assets/Images/video-list-0.jpg";
-import Video1 from "../../Assets/Images/video-list-1.jpg"; //Not importing into file manager properly, download again from synapse
+import Video1 from "../../Assets/Images/video-list-1.jpg";
 import Video2 from "../../Assets/Images/video-list-2.jpg";
 import Video3 from "../../Assets/Images/video-list-3.jpg";
 import Video4 from "../../Assets/Images/video-list-4.jpg";
@@ -14,11 +14,13 @@ import Video8 from "../../Assets/Images/video-list-8.jpg";
 const NewVideo = props => {
   const { title, channel, image } = props.information;
   return (
-    <div>
-      <h4>{title}</h4>
-      <p>{channel}</p>
+    <article className="side_video__card">
       <img src={image} alt="" className="side_video__img" />
-    </div>
+      <div className="side_video__text">
+        <h4 className="side_video__video_title">{title}</h4>
+        <p className="side_video__channel">{channel}</p>
+      </div>
+    </article>
   );
 };
 
@@ -37,7 +39,7 @@ export default class VideoList extends React.Component {
           id: 12346,
           title: "Become A Travel Pro In One Easy Lesson...",
           channel: "Scotty Cranmer",
-          image: Video1 //IMG is corrupted, must re-download.
+          image: Video1
         },
         {
           id: 123457,
@@ -87,7 +89,7 @@ export default class VideoList extends React.Component {
   render() {
     return (
       <section className="side_video">
-        <p className="side_video__title">Next Video</p>
+        <p className="side_video__title">NEXT VIDEO</p>
         {this.state.sideVideo.map(sideVideoData => {
           if (sideVideoData.id !== this.props.mainId) {
             return (
