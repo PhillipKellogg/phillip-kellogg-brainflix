@@ -134,6 +134,9 @@ label {
     flex-wrap: nowrap;
     width: 100%;
     justify-content: flex-start;
+    @media #{$mobile} {
+      justify-content: space-between;
+    }
   }
   &__name {
     margin-left: 40px;
