@@ -6,7 +6,7 @@ import VideoList from "../videoList/VideoList";
 import "./MainVideo.scss";
 const VideoDisplay = props => {
   const {
-    image,
+    // image,
     duration,
     title,
     channel,
@@ -18,9 +18,28 @@ const VideoDisplay = props => {
   return (
     <div className="main">
       <div className="main__bg">
-        <img src={image} alt="" className="main__still" />
+        <article className="main__still">
+          {/* <img src={image} alt="" className="main__still" />  
+          Works for inserting the image  onto the page but I don't know how to pass
+          the variable to sass for background image.*/}
+          <div className="main__settings">
+            <div className="main__play--wrapper">
+              <div className="main__play"></div>
+              <div className="main__play--icon"></div>
+            </div>
+            <div className="main__bar--wrapper">
+              <div className="main__bar"></div>
+              <div className="main__bar--icon"></div>
+              <p className="main__duration"> 0:00/{duration}</p>
+            </div>
+            <div className="main__volume--wrapper">
+              <div className="main__volume"></div>
+              <div className="main__volume--img1"></div>
+              <div className="main__volume--img2"></div>
+            </div>
+          </div>
+        </article>
       </div>
-      <p> duration: {duration},</p>
       <article className="info">
         <article className="info__top">
           <h2 className="info__title">{title}</h2>
@@ -99,9 +118,15 @@ export default class Header extends React.Component {
             </div>
           );
         })}
-        <span className="main_wrapper">
-          <Comments comments={this.state.mainVideo[0].comments} />
-          <VideoList mainId={this.state.mainVideo[0].id} />
+        <span className="bottom">
+          <Comments
+            className="bottom__comment"
+            comments={this.state.mainVideo[0].comments}
+          />
+          <VideoList
+            className="bottom__videoList"
+            mainId={this.state.mainVideo[0].id}
+          />
         </span>
       </section>
     );
