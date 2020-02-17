@@ -34,7 +34,7 @@ export default class Comments extends React.Component {
           <form onSubmit={this.newComment}>
             <div className="form__tablet">
               <div className="form__text">
-                <label htmlFor="comment">JOIN THE COVERSATION</label>
+                <label htmlFor="comment">JOIN THE CONVERSATION</label>
                 <textarea
                   name="comment"
                   className="form__comment"

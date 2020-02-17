@@ -5,24 +5,14 @@ import Comments from "../comments/Comments";
 import VideoList from "../videoList/VideoList";
 import "./MainVideo.scss";
 const VideoDisplay = props => {
-  const {
-    // image,
-    duration,
-    title,
-    channel,
-    timestamp,
-    views,
-    likes,
-    description
-  } = props.statistics;
+  const { image, duration } = props.statistics;
   return (
-    <div className="main">
+    <div className="main ">
       <div className="main__bg">
-        <article className="main__still">
-          {/* <img src={image} alt="" className="main__still" />  
-          Works for inserting the image  onto the page but I don't know how to pass
-          the variable to sass for background image.*/}
-          <div className="main__settings">
+        {/* <article className="main__still"> Shoulda read the instructions..... */}
+        <div className="main__settings">
+          <video className="main__video" poster={image}></video>
+          <article className="main__interact">
             <div className="main__play--wrapper">
               <div className="main__play"></div>
               <div className="main__play--icon"></div>
@@ -37,33 +27,45 @@ const VideoDisplay = props => {
               <div className="main__volume--img1"></div>
               <div className="main__volume--img2"></div>
             </div>
-          </div>
-        </article>
-      </div>
-      <article className="info">
-        <article className="info__top">
-          <h2 className="info__title">{title}</h2>
-          <span className="info__user">
-            <p className="info__channel">By {channel}</p>
-            <p className="info__timestamp">{timestamp}</p>
-          </span>
-          <article className="info__stats">
-            <div className="info__views">
-              <div className="info__icon--views"></div>
-              <p>{views}</p>
-            </div>
-            <div className="info__likes">
-              <div className="info__icon--likes"></div>
-              <p>{likes}</p>
-            </div>
           </article>
-        </article>
-        <p className="info__description"> {description}</p>
-      </article>
+        </div>
+        {/* </article> */}
+      </div>
     </div>
   );
 };
-
+const Description = props => {
+  const {
+    title,
+    channel,
+    timestamp,
+    views,
+    likes,
+    description
+  } = props.statistics;
+  return (
+    <article className="info bottom__desc">
+      <article className="info__top">
+        <h2 className="info__title">{title}</h2>
+        <span className="info__user">
+          <p className="info__channel">By {channel}</p>
+          <p className="info__timestamp">{timestamp}</p>
+        </span>
+        <article className="info__stats">
+          <div className="info__views">
+            <div className="info__icon--views"></div>
+            <p>{views}</p>
+          </div>
+          <div className="info__likes">
+            <div className="info__icon--likes"></div>
+            <p>{likes}</p>
+          </div>
+        </article>
+      </article>
+      <p className="info__description"> {description}</p>
+    </article>
+  );
+};
 export default class Header extends React.Component {
   constructor() {
     super();
@@ -115,19 +117,16 @@ export default class Header extends React.Component {
           return (
             <div key={StatisticsObj.id}>
               <VideoDisplay statistics={StatisticsObj} />
+              <article className="bottom">
+                <article className="bottom__left">
+                  <Description statistics={StatisticsObj} />
+                  <Comments comments={this.state.mainVideo[0].comments} />
+                </article>
+                <VideoList mainId={this.state.mainVideo[0].id} />
+              </article>
             </div>
           );
         })}
-        <span className="bottom">
-          <Comments
-            className="bottom__comment"
-            comments={this.state.mainVideo[0].comments}
-          />
-          <VideoList
-            className="bottom__videoList"
-            mainId={this.state.mainVideo[0].id}
-          />
-        </span>
       </section>
     );
   }

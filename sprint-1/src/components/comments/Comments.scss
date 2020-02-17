@@ -20,6 +20,11 @@ label {
   & form {
     width: 90%;
   }
+
+  @media #{$desktop} {
+    width: 95%;
+    margin-left: 5%;
+  }
   &__tablet {
     margin-bottom: 1rem;
     @media #{$tablet-vertical} {
@@ -60,8 +65,8 @@ label {
     resize: none;
     cursor: pointer;
     padding: 14px 20px;
-    // width: 50%;
-    // color: $black-1;
+    width: 90%;
+    //// color: $black-1;
     border-radius: 4px;
     border: #e1e1e1 solid 2px;
     height: 75px;
@@ -73,8 +78,7 @@ label {
     }
     @media #{$tablet-vertical} {
       height: 20px;
-      width: 88%;
-      // margin-right: 5%;
+      // width: 90%;
     }
   }
 
@@ -99,6 +103,7 @@ label {
     font-weight: bold;
     @media #{$tablet-vertical} {
       width: 35%;
+      // margin-left: 30px;
     }
   }
 }
@@ -112,6 +117,11 @@ label {
   width: 90%;
   flex-direction: column;
 
+  @media #{$desktop} {
+    width: 95%;
+    margin-left: 5%;
+  }
+
   &__block {
     display: flex;
     padding-top: 0;
@@ -119,6 +129,7 @@ label {
     min-height: 70px;
     border-bottom: 1px solid $mercury;
   }
+
   &__pic {
     height: 50px;
     width: 50px;
@@ -128,14 +139,15 @@ label {
     justify-content: center;
     position: absolute;
   }
+
   &__top {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     width: 100%;
-    justify-content: flex-start;
-    @media #{$mobile} {
-      justify-content: space-between;
+    justify-content: space-between;
+    @media #{$desktop} {
+      justify-content: flex-start;
     }
   }
   &__name {

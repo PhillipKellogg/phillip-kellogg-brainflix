@@ -12,6 +12,10 @@ p {
   margin: auto;
   width: 90%;
   margin-top: 40px;
+  @media #{$desktop} {
+    justify-self: flex-end;
+    width: 40%;
+  }
   &__card {
     display: flex;
     flex-direction: row;
