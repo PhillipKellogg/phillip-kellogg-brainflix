@@ -4,6 +4,8 @@ import Video from "../../Assets/Video/BrainStation Sample Video.mp4";
 import Comments from "../comments/Comments";
 import VideoList from "../videoList/VideoList";
 import "./MainVideo.scss";
+import Pages from "./../Pages/Pages";
+
 const VideoDisplay = props => {
   const { image, duration } = props.statistics;
   return (
@@ -146,20 +148,22 @@ export default class Header extends React.Component {
   render() {
     return (
       <section>
-        {this.state.mainVideo.map(StatisticsObj => {
-          return (
-            <div key={StatisticsObj.id}>
-              <VideoDisplay statistics={StatisticsObj} />
-              <article className="bottom">
-                <article className="bottom__left">
-                  <Description statistics={StatisticsObj} />
-                  <Comments comments={this.state.mainVideo[0].comments} />
+        <Pages>
+          {this.state.mainVideo.map(StatisticsObj => {
+            return (
+              <div key={StatisticsObj.id}>
+                <VideoDisplay statistics={StatisticsObj} />
+                <article className="bottom">
+                  <article className="bottom__left">
+                    <Description statistics={StatisticsObj} />
+                    <Comments comments={this.state.mainVideo[0].comments} />
+                  </article>
+                  <VideoList mainId={this.state.mainVideo[0].id} />
                 </article>
-                <VideoList mainId={this.state.mainVideo[0].id} />
-              </article>
-            </div>
-          );
-        })}
+              </div>
+            );
+          })}
+        </Pages>
       </section>
     );
   }

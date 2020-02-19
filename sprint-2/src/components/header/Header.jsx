@@ -1,12 +1,15 @@
 import React from "react";
-
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "./Header.scss";
-
+// import Upload from "../Upload/Upload";
 export default class Header extends React.Component {
   render() {
     return (
       <header className="header">
-        <div className="header__logo"></div>
+        <div className="header__logo">
+          <Link to="/"></Link>
+        </div>
+
         <div className="header__interact">
           <div className="header__search--wrapper">
             <input
@@ -19,11 +22,14 @@ export default class Header extends React.Component {
             <div className="header__search--icon"></div>
           </div>
           <div className="header__actions">
-            <button className="header__upload">
+            <div className="header__upload">
               <div className="header__upload--icon">
-                <span className="header__upload--text">UPLOAD</span>
+                <Link className="header__upload--text" to="/upload">
+                  UPLOAD
+                  {/* <span className="header__upload--text">UPLOAD</span> */}
+                </Link>
               </div>
-            </button>
+            </div>
             <div className="header__user"></div>
           </div>
         </div>
