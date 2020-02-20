@@ -1,0 +1,69 @@
+@import "../../Styles/Partials/fonts";
+@import "../../Styles/Partials/variables";
+@import "../../Styles/Partials/mixins";
+
+.upload {
+  width: 90%;
+  margin: auto;
+  & p {
+    color: $silver;
+  }
+  &__title {
+    font-size: 3rem;
+    margin: 0;
+    color: $black;
+    &--wrapper {
+      width: 100%;
+      border-bottom: 2px solid $mercury;
+    }
+  }
+  &__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid $mercury;
+  }
+  &__img {
+    width: 50%;
+  }
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+
+    justify-self: end;
+  }
+  &__name {
+    resize: none;
+    cursor: pointer;
+    padding: 2px 2px;
+    width: 100%;
+    //// color: $black-1;
+    border-radius: 4px;
+    border: #e1e1e1 solid 2px;
+    height: 75px;
+    border: 2px solid $mercury;
+    background-color: $alabaster;
+    color: $black;
+    &::placeholder {
+      color: $black;
+    }
+  }
+  &__info {
+    resize: none;
+    cursor: pointer;
+    padding: 2px 2px;
+    width: 100%;
+    //// color: $black-1;
+    border-radius: 4px;
+    border: #e1e1e1 solid 2px;
+    height: 75px;
+    border: 2px solid $mercury;
+    background-color: $alabaster;
+    color: $black;
+    &::placeholder {
+      color: $black;
+    }
+  }
+}

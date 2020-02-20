@@ -30,11 +30,16 @@
     background-image: url(../../Assets/Logo/Logo-brainflix.svg);
     background-repeat: no-repeat;
     background-size: contain;
+    // position: inherit;
+    // height: 50px;
+    // width: 100%;
     margin: 0 auto;
     margin-top: 30px;
     margin-bottom: 10px;
+    // padding-top: 50px;
+
     @media #{$tablet-vertical} {
-      height: 40px;
+      height: 50px;
       width: 30%;
       margin-left: 0;
       margin-top: 35px;

@@ -15,10 +15,10 @@ function App() {
         <Switch>
           {/* <Route exact path="/" component={Header} /> */}
           <Route exact path="/" component={MainVideo} />
-          <Route exact path="/upload" component={Upload} />
+          <Route path="/upload" component={Upload} />
           {/* <Route component={NotFound} /> */}
-        </Switch>
-      </BrowserRouter>
+        </Switch>{" "}
+      </BrowserRouter>{" "}
     </div>
   );
 }
