@@ -39,6 +39,10 @@ p {
       width: 90%;
       margin-left: 5%;
     }
+    @media #{$desktop} {
+      width: 80%;
+      margin-left: 10%;
+    }
   }
   // &__still--wrapper {
   //   // position: relative;
@@ -67,6 +71,10 @@ p {
       width: 90%;
       margin-left: 5%;
       margin-right: 5%;
+    }
+    @media #{$desktop} {
+      width: 80%;
+      margin-left: 10%;
     }
   }
   &__play--wrapper {

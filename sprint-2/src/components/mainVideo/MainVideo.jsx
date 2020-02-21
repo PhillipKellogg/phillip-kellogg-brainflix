@@ -153,13 +153,13 @@ export default class Header extends React.Component {
             return (
               <div key={StatisticsObj.id}>
                 <VideoDisplay statistics={StatisticsObj} />
-                <article className="bottom">
-                  <article className="bottom__left">
+                <div className="bottom">
+                  <div className="bottom__left">
                     <Description statistics={StatisticsObj} />
                     <Comments comments={this.state.mainVideo[0].comments} />
-                  </article>
+                  </div>
                   <VideoList mainId={this.state.mainVideo[0].id} />
-                </article>
+                </div>
               </div>
             );
           })}
