@@ -19,20 +19,29 @@
   }
   &__content {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     border-bottom: 1px solid $mercury;
+    @media #{$tablet-vertical} {
+      flex-direction: row;
+    }
   }
   &__img {
-    width: 50%;
+    width: 100%;
+    border-radius: 5px;
+    &--wrapper {
+      width: 100%;
+      margin: 2%;
+    }
   }
   &__text {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-
+    margin: 2%;
     justify-self: end;
+    // margin-right: 2%;
   }
   &__name {
     resize: none;
@@ -42,7 +51,7 @@
     //// color: $black-1;
     border-radius: 4px;
     border: #e1e1e1 solid 2px;
-    height: 75px;
+    height: 32px;
     border: 2px solid $mercury;
     background-color: $alabaster;
     color: $black;
