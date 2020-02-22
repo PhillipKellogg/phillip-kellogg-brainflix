@@ -38,8 +38,10 @@ export default function(props) {
   //   }
   return (
     <div>
-      <p>sdgfhtrdasfg</p>
-      <p>dsfghtrads</p>
+      <p>sdgfhasdasdasdasdtrdasfg</p>
+      <p>dsfasdasdasdghtrads</p>
+      {/* {console.log(props.statistics)} */}
+      <VideoDisplay statistics={props.statistics} />
     </div>
   );
 }
