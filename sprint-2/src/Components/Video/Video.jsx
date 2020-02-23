@@ -37,7 +37,7 @@ const VideoDisplay = props => {
 
 export default function(props) {
   //   {
-  // console.log(props);
+  // console.log(props);videoList: [],
   //   }
   return (
     <div>

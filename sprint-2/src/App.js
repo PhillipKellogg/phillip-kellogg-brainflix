@@ -6,16 +6,15 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import axios from "axios";
 import Upload from "./Components/Upload/Upload";
 
-// console.log()
 export default class App extends React.Component {
+  state = { videoList: [] };
+
   componentDidMount() {
     axios
       .get(
         `https://project-2-api.herokuapp.com/videos/?api_key=<f23538e5-0342-4d58-bbde-04e6a4ee4105>`
       )
       .then(res => {
-        // const persons = res.data;  npm i react-router-dom
-        // console.log(res.data);
         this.setState({
           videoList: res.data
         });
@@ -30,10 +29,18 @@ export default class App extends React.Component {
         <BrowserRouter>
           <Header />
           <Switch>
-            {/* <Route exact path="/" component={Header} /> */}
-            <Route exact path="/" component={Main} />
+            {/* <Route exact path="/" component={Main} /> */}
+            <Route
+              exact
+              path="/"
+              render={() => <Main videoID={this.state.videoList} />}
+            />
+            {/* {console.log(this.state.videoList)} */}
+            <Route
+              path="/video/:id"
+              render={() => <Main videoID={this.state.videoList} />}
+            />
             <Route path="/upload" component={Upload} />
-            {/* <Route component={NotFound} /> */}
           </Switch>
         </BrowserRouter>
       </>

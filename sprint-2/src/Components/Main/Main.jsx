@@ -52,61 +52,12 @@ const vidIdRequest = `https://project-2-api.herokuapp.com/videos/1aivjruutn6a?ap
 // const vidIdRequest = `https://project-2-api.herokuapp.com/videos/1aivjruutn6a?api_key=<f23538e5-0342-4d58-bbde-04e6a4ee4105>`;
 // const herokuURL = "https://project-2-api.herokuapp.com/videos";
 export default class Main extends React.Component {
-  state = { videoList: [], mainVideo: { comments: [] } };
-  //       mainVideo: {
-  //         id: 12345,
-  //         title: "BMX Rampage: 2018 Highlights",
-  //         description:
-  //           "On a gusty day in Southern Utah, a group of 25 daring mountain bikers blew the doors off what is possible on two wheels, unleashing some of the biggest moments the sport has ever seen. While mother nature only allowed for one full run before the conditions made it impossible to ride, that was all that was needed for event veteran Kyle Strait, who won the event for the second time -- eight years after his first Red Cow Rampage title",
-  //         channel: "Red Cow",
-  //         image: Thumbnail,
-  //         views: "1,001,023",
-  //         likes: "110,985",
-  //         duration: "0:42",
-  //         video: Video,
-  //         timestamp: timeSince(new Date(Date.now() - date1)),
-  //         comments: [
-  //           {
-  //             id: 678,
-  //             name: "Micheal Lyons",
-  //             timestamp: timeSince(new Date(Date.now() - date2)),
-  //             comment:
-  //               "They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of a concert I have EVER witnessed."
-  //           },
-  //           {
-  //             id: 876,
-  //             name: "Gary Wong",
-  //             timestamp: timeSince(new Date(Date.now() - date3)),
-  //             comment:
-  //               "Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!"
-  //           },
-  //           {
-  //             id: 777,
-  //             name: "Theodore Duncan",
-  //             timestamp: timeSince(new Date(Date.now() - date4)),
-  //             comment:
-  //               "How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!"
-  //           }
-  //         ]
-  //       }
-  //     };
-  //   }
-  // axios
-  //   .get(apiRequest)
-  //   .then(res => {
-  //     // const persons = res.data;
-  //     let videoList = res.data;
-  //     console.log(res.data);
-  //     console.log(videoList);
-
-  //     // console.log(res);
-  //   })
-  //   .catch(error => console.error(error));
+  state = { mainVideo: { id: "", comments: [] } };
 
   componentDidMount() {
     axios
       .get(
-        `https://project-2-api.herokuapp.com/videos/1a8qhruuzky3?api_key=<f23538e5-0342-4d58-bbde-04e6a4ee4105>`
+        `https://project-2-api.herokuapp.com/videos/1af0jruup5gu?api_key=<f23538e5-0342-4d58-bbde-04e6a4ee4105>`
       )
       .then(res => {
         // const persons = res.data;  npm i react-router-dom
@@ -122,27 +73,20 @@ export default class Main extends React.Component {
   render() {
     return (
       <>
+        {console.log(this.props.videoID)}
         <Pages>
           <p>hi</p>
           <Video statistics={this.state.mainVideo} />
-
-          {/* {console.log(this.state.mainVideo.comments)} */}
           <div className="bottom">
             <div className="bottom__left">
               <Description statistics={this.state.mainVideo} />
               <Comments comments={this.state.mainVideo.comments} />
             </div>
-            <VideoList mainId={this.state.videoList} />{" "}
+            <VideoList
+              videoID={this.props.videoID}
+              mainId={this.state.mainVideo.id}
+            />
           </div>
-          {/* {this.state.mainVideo(StatisticsObj => {
-
-            <Video statistics={this.state.mainVideo} />
-            <div className="bottom">
-              <div className="bottom__left">
-                <Description statistics={this.state.mainVideo} />
-              </div>
-            </div>
-            ); })} */}
         </Pages>
       </>
     );

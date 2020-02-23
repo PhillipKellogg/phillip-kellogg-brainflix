@@ -23,74 +23,23 @@ const NewVideo = props => {
     </article>
   );
 };
+let videoList = [];
 
 export default class VideoList extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      sideVideo: [
-        {
-          id: 12345,
-          title: "BMX Rampage: 2018 Highlights",
-          channel: "Scotty Cranmer",
-          image: Video0
-        },
-        {
-          id: 12346,
-          title: "Become A Travel Pro In One Easy Lesson...",
-          channel: "Scotty Cranmer",
-          image: Video1
-        },
-        {
-          id: 123457,
-          title: "Les Houches The Hidden Gem Of The...",
-          channel: "Scotty Cranmer",
-          image: Video2
-        },
-        {
-          id: 123458,
-          title: "Travel Health Useful Medical Information...",
-          channel: "Scotty Cranmer",
-          image: Video3
-        },
-        {
-          id: 123459,
-          title: "Cheap Airline Tickets Great Ways To Save",
-          channel: "Emily Harper",
-          image: Video4
-        },
-        {
-          id: 123451,
-          title: "Choose The Perfect Accommodations",
-          channel: "Ethan Owen",
-          image: Video5
-        },
-        {
-          id: 123452,
-          title: "Take A Romantic Break In A Boutique Hotel",
-          channel: "Lydia Perez",
-          image: Video6
-        },
-        {
-          id: 123453,
-          title: "Cruising Destination Ideas",
-          channel: "Timothy Austin",
-          image: Video7
-        },
-        {
-          id: 1234544,
-          title: "Train Travel On Track For Safety",
-          channel: "Scotty Cranmer",
-          image: Video8
-        }
-      ]
-    };
-  }
+  state = {
+    sideVideo: []
+  };
+
   render() {
     return (
       <section className="side_video">
+        {/* {this.setState({
+          sideVideo: this.props.videoID
+        })} */}
+        {/* {(videoList = this.props.videoID)}*/}
+        {console.log(this.props.videoID)}
         <p className="side_video__title">NEXT VIDEO</p>
-        {this.state.sideVideo.map(sideVideoData => {
+        {this.props.videoID.map(sideVideoData => {
           if (sideVideoData.id !== this.props.mainId) {
             return (
               <div key={sideVideoData.id} className="side_video__card">
