@@ -18,42 +18,44 @@ const DisplayComment = props => {
     </article>
   );
 };
-// let newComment = e => {
-//   e.preventDefault();
-//   //Do Nothing for now
-// };
-export default function(props) {
-  return (
-    <section>
-      <h2 className="title">3 Comments</h2>
-      {/* <article className="form">
-        <img src={UserPic} alt="" className="form__pic" />
-        <form onSubmit={newComment()}>
-          <div className="form__tablet">
-            <div className="form__text">
-              <label htmlFor="comment">JOIN THE CONVERSATION</label>
-              <textarea
-                name="comment"
-                className="form__comment"
-                placeholder="Write comment here"
-                required
-              ></textarea>
+
+export default class Comments extends React.Component {
+  newComment = e => {
+    e.preventDefault();
+    //Do Nothing for now
+  };
+  componentDidMount() {
+    console.log("component has mounted");
+  }
+  render() {
+    return (
+      <section>
+        <h2 className="title">3 Comments</h2>
+        <article className="form">
+          <img src={UserPic} alt="" className="form__pic" />
+          <form onSubmit={this.newComment}>
+            <div className="form__tablet">
+              <div className="form__text">
+                <label htmlFor="comment">JOIN THE CONVERSATION</label>
+                <textarea
+                  name="comment"
+                  className="form__comment"
+                  placeholder="Write comment here"
+                  required
+                ></textarea>
+              </div>
+              <input type="submit" value="COMMENT" className="form__button" />
             </div>
-            <input type="submit" value="COMMENT" className="form__button" />
-          </div>
-        </form> */}
-      {/* </article> */}
-
-      {/* {props.comments.map(commentObj => {
-        return (
-          <div key={commentObj.id} className="comment__wrapper">
-            <DisplayComment commentData={commentObj} />
-          </div>
-        );
-        
-
-      })} */}
-      {console.log(props.comments)}
-    </section>
-  );
+          </form>
+        </article>
+        {this.props.comments.map(commentObj => {
+          return (
+            <div key={commentObj.id} className="comment__wrapper">
+              <DisplayComment commentData={commentObj} />
+            </div>
+          );
+        })}
+      </section>
+    );
+  }
 }

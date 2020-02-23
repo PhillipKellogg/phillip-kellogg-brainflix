@@ -52,7 +52,7 @@ const vidIdRequest = `https://project-2-api.herokuapp.com/videos/1aivjruutn6a?ap
 // const vidIdRequest = `https://project-2-api.herokuapp.com/videos/1aivjruutn6a?api_key=<f23538e5-0342-4d58-bbde-04e6a4ee4105>`;
 // const herokuURL = "https://project-2-api.herokuapp.com/videos";
 export default class Main extends React.Component {
-  state = { videoList: [], mainVideo: {} };
+  state = { videoList: [], mainVideo: { comments: [] } };
   //       mainVideo: {
   //         id: 12345,
   //         title: "BMX Rampage: 2018 Highlights",
@@ -125,10 +125,15 @@ export default class Main extends React.Component {
         <Pages>
           <p>hi</p>
           <Video statistics={this.state.mainVideo} />
-          <Description statistics={this.state.mainVideo} />
 
           {/* {console.log(this.state.mainVideo.comments)} */}
-          <Comments comments={this.state.mainVideo.comments} />
+          <div className="bottom">
+            <div className="bottom__left">
+              <Description statistics={this.state.mainVideo} />
+              <Comments comments={this.state.mainVideo.comments} />
+            </div>
+            <VideoList mainId={this.state.videoList} />{" "}
+          </div>
           {/* {this.state.mainVideo(StatisticsObj => {
 
             <Video statistics={this.state.mainVideo} />
@@ -136,7 +141,6 @@ export default class Main extends React.Component {
               <div className="bottom__left">
                 <Description statistics={this.state.mainVideo} />
               </div>
-              <VideoList mainId={this.state.mainVideo.id} />
             </div>
             ); })} */}
         </Pages>

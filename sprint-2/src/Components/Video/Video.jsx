@@ -1,6 +1,7 @@
 import React from "react";
 import "./Video.scss";
 // import Header from "./../header/Header";
+const apiKey = "?api_key=<f23538e5-0342-4d58-bbde-04e6a4ee4105>";
 const VideoDisplay = props => {
   const { image, duration } = props.statistics;
   return (
@@ -8,7 +9,9 @@ const VideoDisplay = props => {
       <div className="main__bg">
         {/* <article className="main__still"> Shoulda read the instructions..... */}
         <div className="main__settings">
-          <video className="main__video" poster={image}></video>
+          <video className="main__video" controls poster={image}>
+            {" "}
+          </video>
           <article className="main__interact">
             <div className="main__play--wrapper">
               <div className="main__play"></div>
@@ -38,9 +41,6 @@ export default function(props) {
   //   }
   return (
     <div>
-      <p>sdgfhasdasdasdasdtrdasfg</p>
-      <p>dsfasdasdasdghtrads</p>
-      {/* {console.log(props.statistics)} */}
       <VideoDisplay statistics={props.statistics} />
     </div>
   );
