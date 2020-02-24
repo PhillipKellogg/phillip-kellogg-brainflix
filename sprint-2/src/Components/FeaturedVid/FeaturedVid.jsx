@@ -8,14 +8,17 @@ import axios from "axios";
 import Description from "./../Description/Description";
 
 // const herokuURL = "https://project-2-api.herokuapp.com/videos";
-const API_KEY = "?api_key=<f23538e5-0342-4d58-bbde-04e6a4ee4105>";
+// const API_KEY = "?api_key=<f23538e5-0342-4d58-bbde-04e6a4ee4105>";
 // const apiRequest = `${herokuURL}${herokuKey}`;
 // const videoIdno4 = "1a4kjruuedd9";
 // const vidIdRequest = `https://project-2-api.herokuapp.com/videos/1aivjruutn6a?api_key=<f23538e5-0342-4d58-bbde-04e6a4ee4105>`;
 
 export default class FeaturedVid extends React.Component {
   state = {
-    mainVideo: { id: this.props.match.params.id, comments: [] },
+    mainVideo: {
+      id: this.props.match.params.id,
+      comments: []
+    },
     videoList: []
   };
 
@@ -40,6 +43,8 @@ export default class FeaturedVid extends React.Component {
         `https://project-2-api.herokuapp.com/videos/${this.state.mainVideo.id}?api_key=<f23538e5-0342-4d58-bbde-04e6a4ee4105>`
       )
       .then(res => {
+        console.log(res.data);
+
         this.setState({
           mainVideo: res.data
         });
@@ -63,6 +68,8 @@ export default class FeaturedVid extends React.Component {
           console.log(res.data);
           this.setState({
             mainVideo: res.data
+            // mainVideo: { comments: res.data.comments }
+            // mainVideo: { comments: res.data.comments }
           });
         });
     }
@@ -113,6 +120,7 @@ export default class FeaturedVid extends React.Component {
           <div className="bottom">
             <div className="bottom__left">
               <Description statistics={this.state.mainVideo} />
+              {/* {console.log(this.state.mainVideo.comments)}} */}
               <Comments comments={this.state.mainVideo.comments} />
             </div>
             <VideoList

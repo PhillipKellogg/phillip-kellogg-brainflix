@@ -15,32 +15,32 @@ import Description from "./../Description/Description";
 // const videoIdno4 = "1a4kjruuedd9";
 // const vidIdRequest = `https://project-2-api.herokuapp.com/videos/1aivjruutn6a?api_key=<f23538e5-0342-4d58-bbde-04e6a4ee4105>`;
 
-function timeSince(date) {
-  var seconds = Math.floor((new Date() - date) / 1000);
+// function timeSince(date) {
+//   var seconds = Math.floor((new Date() - date) / 1000);
 
-  var interval = Math.floor(seconds / 31536000);
+//   var interval = Math.floor(seconds / 31536000);
 
-  if (interval > 1) {
-    return interval + " years ago";
-  }
-  interval = Math.floor(seconds / 2592000);
-  if (interval > 1) {
-    return interval + " months ago";
-  }
-  interval = Math.floor(seconds / 86400);
-  if (interval > 1) {
-    return interval + " days ago";
-  }
-  interval = Math.floor(seconds / 3600);
-  if (interval > 1) {
-    return interval + " hours ago";
-  }
-  interval = Math.floor(seconds / 60);
-  if (interval > 1) {
-    return interval + " minutes ago";
-  }
-  return Math.floor(seconds) + " seconds ago";
-}
+//   if (interval > 1) {
+//     return interval + " years ago";
+//   }
+//   interval = Math.floor(seconds / 2592000);
+//   if (interval > 1) {
+//     return interval + " months ago";
+//   }
+//   interval = Math.floor(seconds / 86400);
+//   if (interval > 1) {
+//     return interval + " days ago";
+//   }
+//   interval = Math.floor(seconds / 3600);
+//   if (interval > 1) {
+//     return interval + " hours ago";
+//   }
+//   interval = Math.floor(seconds / 60);
+//   if (interval > 1) {
+//     return interval + " minutes ago";
+//   }
+//   return Math.floor(seconds) + " seconds ago";
+// }
 
 // let date1 = 232224324;
 // let date2 = 235466;
@@ -84,7 +84,6 @@ export default class Main extends React.Component {
     return (
       <>
         <Pages>
-          <p>hi</p>
           <Video statistics={this.state.mainVideo} />
           <div className="bottom">
             <div className="bottom__left">
