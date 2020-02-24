@@ -1,5 +1,5 @@
 import React from "react";
-import axios from "axios";
+// import axios from "axios";
 import "./Description.scss";
 
 const Description = props => {
@@ -38,7 +38,7 @@ const Description = props => {
 export default function(props) {
   return (
     <div>
-      {console.log(props.statistics)}
+      {/* {console.log(props.statistics)} */}
       <Description statistics={props.statistics} />
     </div>
   );

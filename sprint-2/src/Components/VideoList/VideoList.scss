@@ -12,6 +12,7 @@ p {
   margin: auto;
   width: 90%;
   margin-top: 40px;
+
   @media #{$desktop} {
     justify-self: flex-end;
     width: 40%;
@@ -21,6 +22,8 @@ p {
     flex-direction: row;
     margin-bottom: 5px;
     margin-top: 5px;
+    text-decoration: none;
+    color: $black;
   }
   &__img {
     width: 160px;
