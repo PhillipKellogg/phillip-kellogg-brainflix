@@ -14,7 +14,7 @@ const VideoDisplay = props => {
             className="main__video"
             controls
             poster={image}
-            // autoPlay
+            autoPlay
           ></video>
           <article className="main__interact">
             <div className="main__play--wrapper">

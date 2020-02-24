@@ -3,6 +3,7 @@ import "./Comments.scss";
 import UserPic from "../../Assets/Images/Mohan-muruge.jpg";
 const DisplayComment = props => {
   const { comment, name, timestamp } = props.commentData;
+  const currentTimeStamp = new Date().getTime();
   return (
     <article className="comments">
       <div className="comments__block">
@@ -10,7 +11,7 @@ const DisplayComment = props => {
         <div className="comments__text">
           <div className="comments__top">
             <h4 className="comments__name">{name}</h4>
-            <p className="comments__timestamp">{timestamp}</p>
+            <p className="comments__timestamp">{timeSince(timestamp)}</p>
           </div>
           <p className="comments__msg">{comment}</p>
         </div>
@@ -18,14 +19,39 @@ const DisplayComment = props => {
     </article>
   );
 };
+function timeSince(date) {
+  var seconds = Math.floor((new Date() - date) / 1000);
 
+  var interval = Math.floor(seconds / 31536000);
+
+  if (interval > 1) {
+    return interval + " years ago";
+  }
+  interval = Math.floor(seconds / 2592000);
+  if (interval > 1) {
+    return interval + " months ago";
+  }
+  interval = Math.floor(seconds / 86400);
+  if (interval > 1) {
+    return interval + " days ago";
+  }
+  interval = Math.floor(seconds / 3600);
+  if (interval > 1) {
+    return interval + " hours ago";
+  }
+  interval = Math.floor(seconds / 60);
+  if (interval > 1) {
+    return interval + " minutes ago";
+  }
+  return Math.floor(seconds) + " seconds ago";
+}
 export default class Comments extends React.Component {
   newComment = e => {
     e.preventDefault();
     //Do Nothing for now
   };
   componentDidMount() {
-    console.log("component has mounted");
+    // console.log("component has mounted");
   }
   render() {
     return (

@@ -11,7 +11,7 @@ export default class App extends React.Component {
   render() {
     return (
       <>
-        {console.log(this.props)}
+        {/* {console.log(this.props)} */}
         <BrowserRouter>
           <Header />
           <Switch>

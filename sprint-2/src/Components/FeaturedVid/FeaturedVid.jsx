@@ -43,7 +43,7 @@ export default class FeaturedVid extends React.Component {
         `https://project-2-api.herokuapp.com/videos/${this.state.mainVideo.id}?api_key=<f23538e5-0342-4d58-bbde-04e6a4ee4105>`
       )
       .then(res => {
-        console.log(res.data);
+        // console.log(res.data);
 
         this.setState({
           mainVideo: res.data
@@ -62,7 +62,7 @@ export default class FeaturedVid extends React.Component {
           `https://project-2-api.herokuapp.com/videos/${currentID}?api_key=<f23538e5-0342-4d58-bbde-04e6a4ee4105>`
         )
         .then(res => {
-          console.log(res.data);
+          // console.log(res.data);
           this.setState({
             mainVideo: res.data
             // mainVideo: { comments: res.data.comments }
@@ -107,7 +107,7 @@ export default class FeaturedVid extends React.Component {
   //     });
 
   render() {
-    console.log(this.props.match.params.id);
+    // console.log(this.props.match.params.id);
 
     return (
       <>

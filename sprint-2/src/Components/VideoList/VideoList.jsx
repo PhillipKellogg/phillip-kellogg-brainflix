@@ -27,7 +27,7 @@ export default class VideoList extends React.Component {
           sideVideo: this.props.videoID
         })} */}
         {/* {(videoList = this.props.videoID)}*/}
-        {console.log(this.props.videoID)}
+        {/* {console.log(this.props.videoID)} */}
         <p className="side_video__title">NEXT VIDEO</p>
 
         {this.props.videoID.map(sideVideoData => {
