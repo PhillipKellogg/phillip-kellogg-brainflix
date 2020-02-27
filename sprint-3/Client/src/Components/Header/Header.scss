@@ -1,0 +1,157 @@
+@import "../../Styles/Partials/fonts";
+@import "../../Styles/Partials/variables";
+@import "../../Styles/Partials/mixins";
+
+* {
+  font-family: Avenir;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  width: 90%;
+  margin: 10% auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  @media #{$tablet-vertical} {
+    flex-direction: row;
+  }
+  &__interact {
+    @media #{$tablet-vertical} {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  &__logo {
+    height: 50px;
+    width: 40%;
+    background-image: url(../../Assets/Logo/Logo-brainflix.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    // position: inherit;
+    // height: 50px;
+    // width: 100%;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    // padding-top: 50px;
+
+    @media #{$tablet-vertical} {
+      height: 50px;
+      width: 30%;
+      margin-left: 0;
+      margin-top: 35px;
+    }
+  }
+  &__search--wrapper {
+    position: relative;
+    width: 90%;
+    margin-left: 0;
+    // margin-right: 5%;
+    @media #{$small-mobile} {
+      width: 80%;
+    }
+
+    @media #{$tablet-vertical} {
+      width: 200px;
+      margin-top: 20px;
+      width: 170px;
+      margin-right: 20px;
+    }
+  }
+  &__search--icon {
+    background-image: url("../../Assets/Icons/SVG/Icon-search.svg");
+    height: 30px;
+    width: 30px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 25px;
+    left: 20px;
+  }
+  &__search {
+    border-radius: 5px;
+    // position: absolutes;
+    height: 42px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 60px;
+    font-size: 1.5rem;
+    border: 2px solid $mercury;
+    background-color: $alabaster;
+    color: $black;
+    width: 100%;
+    right: 0;
+    left: 0;
+
+    &::placeholder {
+      color: $black;
+    }
+  }
+  &__actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5% auto;
+    @media #{$tablet-vertical} {
+      margin-left: 50px;
+      margin-top: 20px;
+    }
+  }
+  &__user {
+    height: 75px;
+    width: 75px;
+    background-color: #bbb;
+    border-radius: 50%;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url(../../Assets/Images/Mohan-muruge.jpg);
+    background-size: cover;
+    @media #{$tablet-vertical} {
+      margin-left: 20px;
+    }
+  }
+  &__upload {
+    height: 75px;
+    width: 75%;
+    background-color: $brainflix-aqua;
+    border: 1px;
+    color: $white;
+    font-weight: bold;
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+
+    @media #{$tablet-vertical} {
+      width: 200px;
+      margin-left: 20px;
+    }
+  }
+  &__upload--icon {
+    height: 30px;
+    width: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("../../Assets/Icons/SVG/Icon-upload.svg");
+    position: absolute;
+    bottom: 20px;
+    margin-right: 60%;
+    right: 0;
+    @media #{$small-mobile} {
+      margin-right: 75%;
+    }
+    @media #{$tablet-vertical} {
+      margin-right: 70%;
+    }
+  }
+  &__upload--text {
+    font-size: 1.5rem;
+    // margin-top: 10px;
+    margin-left: 40px;
+    text-decoration: none;
+    color: $white;
+    padding-top: 10px;
+  }
+}

@@ -1,0 +1,70 @@
+@import "../../Styles/Partials/fonts";
+@import "../../Styles/Partials/variables";
+@import "../../Styles/Partials/mixins";
+
+.info {
+  width: 90%;
+  margin: auto;
+  @media #{$desktop} {
+    width: 95%;
+    margin-left: 5%;
+  }
+  &__top {
+    border-bottom: 1px solid $mercury;
+  }
+  &__title {
+    font-size: 2.2rem;
+    font-family: Avenir_bold;
+    color: $black;
+    margin: 0;
+    margin-top: 20px;
+  }
+  &__user {
+    display: flex;
+    margin-top: 20px;
+  }
+  &__channel {
+    font-weight: 1000;
+  }
+  &__timestamp {
+    margin-left: 20px;
+    color: $silver;
+  }
+  &__stats {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  &__likes {
+    margin-left: 50px;
+  }
+  &__description {
+    margin-top: 20px;
+    line-height: 1.5rem;
+    margin-bottom: 30px;
+    @media #{$desktop} {
+      width: 90%;
+      // margin-left: 5%;
+    }
+  }
+  &__views {
+    display: flex;
+    flex-direction: row;
+  }
+  &__icon--views {
+    height: 1rem;
+    width: 1.5rem;
+    background-repeat: no-repeat;
+    background-image: url("../../Assets/Icons/SVG/Icon-views.svg");
+  }
+  &__likes {
+    display: flex;
+    flex-direction: row;
+  }
+  &__icon--likes {
+    width: 1.5rem;
+    height: 1rem;
+    background-image: url("../../Assets/Icons/SVG/Icon-likes.svg");
+    background-repeat: no-repeat;
+  }
+}
