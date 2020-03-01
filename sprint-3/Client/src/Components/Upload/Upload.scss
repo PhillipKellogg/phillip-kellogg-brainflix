@@ -44,7 +44,7 @@
     &--wrapper {
       // margin: 2%;
       @media #{$tablet-vertical} {
-        width: 50%;
+        width: 56%;
       }
     }
   }
@@ -65,7 +65,7 @@
   &__name {
     resize: none;
     cursor: pointer;
-    padding: 2px 2px;
+    padding: 10px 2px;
     width: 100%;
     //// color: $black-1;
     border-radius: 4px;
@@ -135,6 +135,9 @@
     text-align: center;
     padding-top: 15px;
     font-size: 1.5rem;
+    color: $white;
+    padding-bottom: 35px;
+    padding-top: 15px;
     // margin-left: 90%;
     // margin-right: 10%;
     @media #{$mobile} {

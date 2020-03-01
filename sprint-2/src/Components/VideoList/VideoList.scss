@@ -12,6 +12,9 @@ p {
   margin: auto;
   width: 90%;
   margin-top: 40px;
+  &__ {
+    text-decoration: none;
+  }
 
   @media #{$desktop} {
     justify-self: flex-end;

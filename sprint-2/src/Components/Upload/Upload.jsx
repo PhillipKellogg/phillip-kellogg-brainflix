@@ -34,6 +34,13 @@ export default class Header extends React.Component {
             </div>
             {/* </div> */}
           </article>
+          <div className="publish">
+            <div className="publish__place_holder"></div>
+            <div className="publish__wrapper">
+              <div className="publish__cancel">Cancel</div>
+              <div className="publish__button">PUBLISH</div>
+            </div>
+          </div>
         </section>
       </Pages>
     );

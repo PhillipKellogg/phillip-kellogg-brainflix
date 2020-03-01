@@ -33,7 +33,7 @@ export default class VideoList extends React.Component {
         {this.props.videoID.map(sideVideoData => {
           if (sideVideoData.id !== this.props.mainId) {
             return (
-              <Link to={`/video/${sideVideoData.id}`}>
+              <Link class="side_video__link" to={`/video/${sideVideoData.id}`}>
                 {/* {console.log(sideVideoData.id)} */}
                 <div key={sideVideoData.id} className="side_video__card">
                   <NewVideo information={sideVideoData} />
