@@ -1,11 +1,7 @@
 const express = require("express");
 const router = express.Router();
-
-// router.post("/soups", function(req, res) {
-//   res.send("soups");
-// });
-
-router.get("/videos", function(_, res) {
+const videoList = require("./data/videoList.json");
+router.get("/", (req, res) => {
   res.send(videoList);
 });
 module.exports = router;

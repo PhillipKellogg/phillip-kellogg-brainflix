@@ -28,7 +28,7 @@ export default class FeaturedVid extends React.Component {
   // shouldComponentUpdate(nextProps) {}
   componentDidMount() {
     axios
-      .get("localhost:8080/videos")
+      .get(`http://localhost:8080/videos`)
       .then(res => {
         this.setState({
           videoList: res.data
@@ -37,9 +37,7 @@ export default class FeaturedVid extends React.Component {
       .catch(error => console.error(error));
 
     axios
-      .get(
-        `https://project-2-api.herokuapp.com/videos/${this.state.mainVideo.id}?api_key=<f23538e5-0342-4d58-bbde-04e6a4ee4105>`
-      )
+      .get(`http://localhost:8080/videos/${this.state.mainVideo.id}`)
       .then(res => {
         // console.log(res.data);
 
@@ -55,18 +53,14 @@ export default class FeaturedVid extends React.Component {
 
     let currentID = this.props.match.params.id;
     if (prevState.mainVideo.id !== currentID) {
-      axios
-        .get(
-          `https://project-2-api.herokuapp.com/videos/${currentID}?api_key=<f23538e5-0342-4d58-bbde-04e6a4ee4105>`
-        )
-        .then(res => {
-          // console.log(res.data);
-          this.setState({
-            mainVideo: res.data
-            // mainVideo: { comments: res.data.comments }
-            // mainVideo: { comments: res.data.comments }
-          });
+      axios.get(`http://localhost:8080/videos/${currentID}`).then(res => {
+        // console.log(res.data);
+        this.setState({
+          mainVideo: res.data
+          // mainVideo: { comments: res.data.comments }
+          // mainVideo: { comments: res.data.comments }
         });
+      });
     }
     //   this.setState({
     //     mainVideo: this.props.match.params
