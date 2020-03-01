@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-// const videoList = require("./../data/videoList.json");
 const uuid = require("uuid/v4");
 const fs = require("fs");
 
@@ -38,14 +37,6 @@ router.post("/", (req, res) => {
   fs.writeFileSync("./data/videoList.json", JSON.stringify(videoList, null, 2));
   videoInfo.push(videoInfoData);
   fs.writeFileSync("./data/videoInfo.json", JSON.stringify(videoInfo, null, 2));
-  // videoInfo.push(videoInfoData);
-  // fs.writeFileSync(
-  //   "./data/videoInfo.json",
-  //   JSON.stringify(videoInfoData, null, 2)
-  // );
-  console.log(videoListData);
-  console.log(videoInfoData);
-
   res.status(201).json(videoListData);
 });
 

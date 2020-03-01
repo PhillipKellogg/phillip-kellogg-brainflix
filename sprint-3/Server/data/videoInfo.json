@@ -313,47 +313,5 @@
         "timestamp": 1542262984046
       }
     ]
-  },
-  {
-    "title": "ghrweghrwe",
-    "description": "asdasd",
-    "id": "ec6865",
-    "image": "https://i.redd.it/f7bx7svtb7o31.jpg",
-    "timestamp": 1583105578604,
-    "duration": "69:69",
-    "video": "https://project-2-api.herokuapp.com/stream",
-    "views": "2,043,765",
-    "likes": "400,058",
-    "channel": "Roy Lee Jr",
-    "comments": [
-      {
-        "name": "Obama",
-        "comment": "big lul",
-        "id": "2a032f",
-        "likes": 0,
-        "timestamp": 1583105578604
-      }
-    ]
-  },
-  {
-    "title": "weeeeeeeeeeeeeeee",
-    "description": "weeee",
-    "id": "35af54",
-    "image": "https://i.redd.it/f7bx7svtb7o31.jpg",
-    "timestamp": 1583105705606,
-    "duration": "69:69",
-    "video": "https://project-2-api.herokuapp.com/stream",
-    "views": "2,043,765",
-    "likes": "400,058",
-    "channel": "Roy Lee Jr",
-    "comments": [
-      {
-        "name": "Obama",
-        "comment": "big lul",
-        "id": "f5fdc1",
-        "likes": 0,
-        "timestamp": 1583105705606
-      }
-    ]
   }
 ]

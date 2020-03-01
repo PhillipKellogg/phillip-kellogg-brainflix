@@ -50,9 +50,7 @@ export default class Comments extends React.Component {
     e.preventDefault();
     //Do Nothing for now
   };
-  componentDidMount() {
-    // console.log("component has mounted");
-  }
+
   render() {
     return (
       <section>
